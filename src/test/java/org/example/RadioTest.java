@@ -84,7 +84,7 @@ public class RadioTest {
 
 
     @Test
-    public void shouldSetNextRadioStationIf0() {
+    public void shouldSetNextRadioStationIfMin() {
         Radio stat = new Radio();
         stat.setCurrentRadioStation(0);
         stat.nextRadioStation();
@@ -97,9 +97,9 @@ public class RadioTest {
 
 
     @Test
-    public void shouldSetNextRadioStationIf9() {
-        Radio stat = new Radio();
-        stat.setCurrentRadioStation(9);
+    public void shouldSetNextRadioStationIfMax() {
+        Radio stat = new Radio(18);
+        //stat.setCurrentRadioStation(9);
         stat.nextRadioStation();
 
         int expected = 0;
@@ -123,7 +123,7 @@ public class RadioTest {
 
 
     @Test
-    public void shouldSetPrevRadioStationIf0() {
+    public void shouldSetPrevRadioStationIfMin() {
         Radio stat = new Radio();
         stat.setCurrentRadioStation(0);
         stat.prevRadioStation();
@@ -136,7 +136,7 @@ public class RadioTest {
 
 
     @Test
-    public void shouldSetPrevRadioStationIf9() {
+    public void shouldSetPrevRadioStationIfMax() {
         Radio stat = new Radio();
         stat.setCurrentRadioStation(9);
         stat.prevRadioStation();
@@ -162,7 +162,7 @@ public class RadioTest {
 
 
     @Test
-    public void shouldSetRadioStationIf0() {
+    public void shouldSetRadioStationIfMin() {
         Radio stat = new Radio();
         stat.setCurrentRadioStation(0);
 
@@ -174,7 +174,7 @@ public class RadioTest {
 
 
     @Test
-    public void shouldSetRadioStationIf9() {
+    public void shouldSetRadioStationIfMax() {
         Radio stat = new Radio();
         stat.setCurrentRadioStation(9);
 
@@ -198,7 +198,7 @@ public class RadioTest {
 
 
     @Test
-    public void shouldSetRadioStationIfLess0() {
+    public void shouldSetRadioStationIfLessMin() {
         Radio stat = new Radio();
         stat.setCurrentRadioStation(-1);
 
@@ -210,7 +210,7 @@ public class RadioTest {
 
 
     @Test
-    public void shouldSetRadioStationIfMore9() {
+    public void shouldSetRadioStationIfMoreMax() {
         Radio stat = new Radio();
         stat.setCurrentRadioStation(10);
 
@@ -222,7 +222,7 @@ public class RadioTest {
 
 
     @Test
-    public void shouldSetVolumeIf0() {
+    public void shouldSetVolumeIfMin() {
         Radio vol = new Radio();
         vol.setCurrentVolume(0);
 
@@ -234,7 +234,7 @@ public class RadioTest {
 
 
     @Test
-    public void shouldSetVolumeIf100() {
+    public void shouldSetVolumeIfMax() {
         Radio vol = new Radio();
         vol.setCurrentVolume(100);
 
@@ -258,7 +258,7 @@ public class RadioTest {
 
 
     @Test
-    public void shouldSetVolumeIfLess0() {
+    public void shouldSetVolumeIfLessMin() {
         Radio vol = new Radio();
         vol.setCurrentVolume(-1);
 
@@ -270,7 +270,7 @@ public class RadioTest {
 
 
     @Test
-    public void shouldSetVolumeIfMore100() {
+    public void shouldSetVolumeIfMoreMax() {
         Radio vol = new Radio();
         vol.setCurrentVolume(101);
 

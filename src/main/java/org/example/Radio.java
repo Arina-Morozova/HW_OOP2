@@ -2,8 +2,22 @@ package org.example;
 
 public class Radio {
 
+    private int minRadioStation = 0;
+    private int maxRadioStation = 9;
     public int currentRadioStation;
+    private int minVolume = 0;
+    private int maxVolume = 100;
     public int currentVolume;
+
+    public Radio(int size) {
+        maxRadioStation = minRadioStation + size;
+    }
+
+    public Radio(int minRadioStation, int maxRadioStation) {
+        this.minRadioStation = minRadioStation;
+        this.maxRadioStation = maxRadioStation;
+        this.currentRadioStation = minRadioStation;
+    }
 
     public int getCurrentRadioStation() {
         return currentRadioStation;
@@ -11,10 +25,10 @@ public class Radio {
 
     //Установить радиостанцию
     public void setCurrentRadioStation(int newCurrentRadioStation) {
-        if (newCurrentRadioStation < 0) {
+        if (newCurrentRadioStation < minRadioStation) {
             return;
         }
-        if (newCurrentRadioStation > 9) {
+        if (newCurrentRadioStation > maxRadioStation) {
             return;
         }
         currentRadioStation = newCurrentRadioStation;
@@ -25,10 +39,10 @@ public class Radio {
     }
 
     public void setCurrentVolume(int newCurrentVolume) {
-        if (newCurrentVolume < 0) {
+        if (newCurrentVolume < minVolume) {
             return;
         }
-        if (newCurrentVolume > 100) {
+        if (newCurrentVolume > maxVolume) {
             return;
         }
         currentVolume = newCurrentVolume;
@@ -36,34 +50,34 @@ public class Radio {
 
     //Увеличение громкости
     public void increaseVolume() {
-        if (currentVolume < 100) {
+        if (currentVolume < minVolume) {
             currentVolume = currentVolume + 1;
         }
     }
 
     //Уменьшение громкости
     public void decreaseVolume() {
-        if (currentVolume > 0) {
+        if (currentVolume > maxVolume) {
             currentVolume = currentVolume - 1;
         }
     }
 
     //Следующая радиостанция
     public void nextRadioStation() {
-        if (currentRadioStation < 9) {
+        if (currentRadioStation < maxRadioStation) {
             currentRadioStation = currentRadioStation + 1;
         } else {
-            currentRadioStation = 0;
+            currentRadioStation = minRadioStation;
         }
 
     }
 
     //Предыдущая радиостанция
     public void prevRadioStation() {
-        if (currentRadioStation > 0) {
+        if (currentRadioStation > minRadioStation) {
             currentRadioStation = currentRadioStation - 1;
         } else {
-            currentRadioStation = 9;
+            currentRadioStation = maxRadioStation;
         }
     }
 }
