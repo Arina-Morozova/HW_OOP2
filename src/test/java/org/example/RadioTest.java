@@ -7,15 +7,15 @@ public class RadioTest {
 
     @Test
     public void shouldIncreaseMinVolume() {
-        Radio vol = new Radio();
-        vol.setCurrentVolume(0);
-        vol.increaseVolume();
+    Radio vol = new Radio();
+    vol.setCurrentVolume(0);
+    vol.increaseVolume();
 
-        int expected = 1;
-        int actual = vol.getCurrentVolume();
+    int expected = 1;
+    int actual = vol.getCurrentVolume();
 
-        Assertions.assertEquals(expected, actual);
-    }
+    Assertions.assertEquals(expected, actual);
+}
 
 
     @Test
@@ -210,7 +210,8 @@ public class RadioTest {
 
 
     @Test
-    public void shouldSetRadioStationIfMoreMax() {
+    public
+    void shouldSetRadioStationIfMoreMax() {
         Radio stat = new Radio(15);
         stat.setCurrentRadioStation(15);
 
@@ -279,4 +280,5 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
 }

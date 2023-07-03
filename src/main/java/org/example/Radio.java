@@ -1,13 +1,22 @@
 package org.example;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+
 public class Radio {
 
-    private int minRadioStation = 0;
-    private int maxRadioStation = 9;
-    public int currentRadioStation;
-    private int minVolume = 0;
-    private int maxVolume = 100;
-    public int currentVolume;
+    private int minRadioStation;
+    private int maxRadioStation;
+    private int currentRadioStation;
+    private int minVolume;
+    private int maxVolume;
+    private int currentVolume;
+    private int defaultNumberOfStations = 10;
 
     public Radio(int size) {
         maxRadioStation = minRadioStation + size - 1;
@@ -17,35 +26,6 @@ public class Radio {
         this.minRadioStation = minRadioStation;
         this.maxRadioStation = maxRadioStation;
         this.currentRadioStation = minRadioStation;
-    }
-
-    public int getCurrentRadioStation() {
-        return currentRadioStation;
-    }
-
-    //Установить радиостанцию
-    public void setCurrentRadioStation(int newCurrentRadioStation) {
-        if (newCurrentRadioStation < minRadioStation) {
-            return;
-        }
-        if (newCurrentRadioStation > maxRadioStation) {
-            return;
-        }
-        currentRadioStation = newCurrentRadioStation;
-    }
-
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
-
-    public void setCurrentVolume(int newCurrentVolume) {
-        if (newCurrentVolume < minVolume) {
-            return;
-        }
-        if (newCurrentVolume > maxVolume) {
-            return;
-        }
-        currentVolume = newCurrentVolume;
     }
 
     //Увеличение громкости
