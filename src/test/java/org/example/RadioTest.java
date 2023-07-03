@@ -99,7 +99,7 @@ public class RadioTest {
     @Test
     public void shouldSetNextRadioStationIfMax() {
         Radio stat = new Radio(18);
-        //stat.setCurrentRadioStation(9);
+        stat.setCurrentRadioStation(17);
         stat.nextRadioStation();
 
         int expected = 0;
@@ -111,7 +111,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetNextRadioStationIfAverage() {
-        Radio stat = new Radio();
+        Radio stat = new Radio(15);
         stat.setCurrentRadioStation(5);
         stat.nextRadioStation();
 
@@ -124,11 +124,11 @@ public class RadioTest {
 
     @Test
     public void shouldSetPrevRadioStationIfMin() {
-        Radio stat = new Radio();
+        Radio stat = new Radio(22);
         stat.setCurrentRadioStation(0);
         stat.prevRadioStation();
 
-        int expected = 9;
+        int expected = 21;
         int actual = stat.getCurrentRadioStation();
 
         Assertions.assertEquals(expected, actual);
@@ -163,7 +163,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetRadioStationIfMin() {
-        Radio stat = new Radio();
+        Radio stat = new Radio(4);
         stat.setCurrentRadioStation(0);
 
         int expected = 0;
@@ -175,10 +175,10 @@ public class RadioTest {
 
     @Test
     public void shouldSetRadioStationIfMax() {
-        Radio stat = new Radio();
-        stat.setCurrentRadioStation(9);
+        Radio stat = new Radio(16);
+        stat.setCurrentRadioStation(15);
 
-        int expected = 9;
+        int expected = 15;
         int actual = stat.getCurrentRadioStation();
 
         Assertions.assertEquals(expected, actual);
@@ -211,8 +211,8 @@ public class RadioTest {
 
     @Test
     public void shouldSetRadioStationIfMoreMax() {
-        Radio stat = new Radio();
-        stat.setCurrentRadioStation(10);
+        Radio stat = new Radio(15);
+        stat.setCurrentRadioStation(15);
 
         int expected = 0;
         int actual = stat.getCurrentRadioStation();

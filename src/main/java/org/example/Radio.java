@@ -10,10 +10,10 @@ public class Radio {
     public int currentVolume;
 
     public Radio(int size) {
-        maxRadioStation = minRadioStation + size;
+        maxRadioStation = minRadioStation + size - 1;
     }
 
-    public Radio(int minRadioStation, int maxRadioStation) {
+    public Radio() {
         this.minRadioStation = minRadioStation;
         this.maxRadioStation = maxRadioStation;
         this.currentRadioStation = minRadioStation;
@@ -50,14 +50,14 @@ public class Radio {
 
     //Увеличение громкости
     public void increaseVolume() {
-        if (currentVolume < minVolume) {
+        if (currentVolume < maxVolume) {
             currentVolume = currentVolume + 1;
         }
     }
 
     //Уменьшение громкости
     public void decreaseVolume() {
-        if (currentVolume > maxVolume) {
+        if (currentVolume > minVolume) {
             currentVolume = currentVolume - 1;
         }
     }
