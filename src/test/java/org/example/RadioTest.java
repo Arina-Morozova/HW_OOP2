@@ -84,139 +84,138 @@ public class RadioTest {
 
 
     @Test
-    public void shouldSetNextRadioStationIfMin() {
+    public void shouldSetNextStationIfMin() {
         Radio stat = new Radio();
-        stat.setCurrentRadioStation(0);
-        stat.nextRadioStation();
+        stat.setCurrentStation(0);
+        stat.nextStation();
 
         int expected = 1;
-        int actual = stat.getCurrentRadioStation();
+        int actual = stat.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
     }
 
 
     @Test
-    public void shouldSetNextRadioStationIfMax() {
+    public void shouldSetNextStationIfMax() {
         Radio stat = new Radio(18);
-        stat.setCurrentRadioStation(17);
-        stat.nextRadioStation();
+        stat.setCurrentStation(17);
+        stat.nextStation();
 
         int expected = 0;
-        int actual = stat.getCurrentRadioStation();
+        int actual = stat.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
     }
 
 
     @Test
-    public void shouldSetNextRadioStationIfAverage() {
+    public void shouldSetNextoStationIfAverage() {
         Radio stat = new Radio(15);
-        stat.setCurrentRadioStation(5);
-        stat.nextRadioStation();
+        stat.setCurrentStation(5);
+        stat.nextStation();
 
         int expected = 6;
-        int actual = stat.getCurrentRadioStation();
+        int actual = stat.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
     }
 
 
     @Test
-    public void shouldSetPrevRadioStationIfMin() {
+    public void shouldSetPrevStationIfMin() {
         Radio stat = new Radio(22);
-        stat.setCurrentRadioStation(0);
-        stat.prevRadioStation();
+        stat.setCurrentStation(0);
+        stat.prevStation();
 
         int expected = 21;
-        int actual = stat.getCurrentRadioStation();
+        int actual = stat.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
     }
 
 
     @Test
-    public void shouldSetPrevRadioStationIfMax() {
+    public void shouldSetPrevStationIfMax() {
         Radio stat = new Radio();
-        stat.setCurrentRadioStation(9);
-        stat.prevRadioStation();
+        stat.setCurrentStation(9);
+        stat.prevStation();
 
         int expected = 8;
-        int actual = stat.getCurrentRadioStation();
+        int actual = stat.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
     }
 
 
     @Test
-    public void shouldSetPrevRadioStationIfAverage() {
+    public void shouldSetPrevStationIfAverage() {
         Radio stat = new Radio();
-        stat.setCurrentRadioStation(5);
-        stat.prevRadioStation();
+        stat.setCurrentStation(5);
+        stat.prevStation();
 
         int expected = 4;
-        int actual = stat.getCurrentRadioStation();
+        int actual = stat.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
     }
 
 
     @Test
-    public void shouldSetRadioStationIfMin() {
+    public void shouldSetStationIfMin() {
         Radio stat = new Radio(4);
-        stat.setCurrentRadioStation(0);
+        stat.setCurrentStation(0);
 
         int expected = 0;
-        int actual = stat.getCurrentRadioStation();
+        int actual = stat.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
     }
 
 
     @Test
-    public void shouldSetRadioStationIfMax() {
+    public void shouldSetStationIfMax() {
         Radio stat = new Radio(16);
-        stat.setCurrentRadioStation(15);
+        stat.setCurrentStation(15);
 
         int expected = 15;
-        int actual = stat.getCurrentRadioStation();
+        int actual = stat.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
     }
 
 
     @Test
-    public void shouldSetRadioStationIfAverage() {
+    public void shouldSetStationIfAverage() {
         Radio stat = new Radio();
-        stat.setCurrentRadioStation(5);
+        stat.setCurrentStation(5);
 
         int expected = 5;
-        int actual = stat.getCurrentRadioStation();
+        int actual = stat.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
     }
 
 
     @Test
-    public void shouldSetRadioStationIfLessMin() {
+    public void shouldSetStationIfLessMin() {
         Radio stat = new Radio();
-        stat.setCurrentRadioStation(-1);
+        stat.setCurrentStation(-1);
 
         int expected = 0;
-        int actual = stat.getCurrentRadioStation();
+        int actual = stat.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
     }
 
 
     @Test
-    public
-    void shouldSetRadioStationIfMoreMax() {
+    public void shouldSetRadioStationIfMoreMax() {
         Radio stat = new Radio(15);
-        stat.setCurrentRadioStation(15);
+        stat.setCurrentStation(15);
 
         int expected = 0;
-        int actual = stat.getCurrentRadioStation();
+        int actual = stat.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
     }
