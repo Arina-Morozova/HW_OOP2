@@ -18,6 +18,26 @@ public class Radio {
     private int currentVolume;
     private int defaultStations = 10;
 
+    public void setCurrentStation(int newCurrentStation) {
+        if (newCurrentStation < minStation) {
+            return;
+        }
+        if (newCurrentStation > maxStation) {
+            return;
+        }
+        currentStation = newCurrentStation;
+    }
+
+    public void setCurrentVolume(int newCurrentVolume) {
+        if (newCurrentVolume < minVolume) {
+            return;
+        }
+        if (newCurrentVolume > maxVolume) {
+            return;
+        }
+        currentVolume = newCurrentVolume;
+    }
+
     //Увеличение громкости
     public void increaseVolume() {
         if (currentVolume < maxVolume) {
